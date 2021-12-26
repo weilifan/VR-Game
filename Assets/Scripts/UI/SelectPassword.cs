@@ -8,6 +8,7 @@ using System;
 public class SelectPassword : MonoBehaviour
 {
     //public Button[] passwordButtons;
+	public GameObject passwordCanvas;
 	public GameObject passwordIncorrect;
 	
 	public static string realPassword = GenerateRandomCode(4);
@@ -39,7 +40,8 @@ public class SelectPassword : MonoBehaviour
 		if(realPassword == userEnteredPassword)
 		{
 			Debug.Log("密码正确");
-			passwordIncorrect.SetActive(false);
+			PlayDoorAnimation.PlayAnimation();
+			DestroyImmediate(passwordCanvas);
 		}
 		else
 		{

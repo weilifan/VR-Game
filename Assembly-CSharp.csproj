@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\UI\AssignCanvasEventCamera.cs" />
      <Compile Include="Assets\Scripts\Weapon\CollectWeapon.cs" />
      <Compile Include="Assets\Scripts\MagicTokenAction.cs" />
+     <Compile Include="Assets\Scripts\UI\SelectPassword.cs" />
      <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_PlugScript.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_HeroInteractive.cs" />
@@ -69,6 +70,8 @@
      <Compile Include="Assets\Scripts\VRHandController.cs" />
      <Compile Include="Assets\AN Interactive Physical Door Pack\Scripts\AN_DoorScript.cs" />
      <Compile Include="Assets\Scripts\LightFlicker.cs" />
+     <Compile Include="Assets\Scripts\UI\ShowPasswordDigit.cs" />
+     <Compile Include="Assets\Scripts\Door\PlayDoorAnimation.cs" />
      <None Include="Assets\Shaders\CurvedUnlit.shader" />
      <None Include="Assets\laxer tree pkg\README.txt" />
      <None Include="Assets\Shaders\CurvedCode.cginc" />
