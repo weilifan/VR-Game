@@ -1,0 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BulletHits : MonoBehaviour
+{
+	
+	
+    void OnTriggerEnter(Collider other) {
+        // 如果碰撞的是Boundary则返回
+        if (other.tag == "Mummy")
+		{
+			EnemyHealth.DecreaseHealthValue();
+			//  实例化爆炸特效
+			//Instantiate(explosion, transform.position, transform.rotation);
+			//isHealthValueLessThanZero = Health.isHealthValueLessThanZero();
+			
+			Destroy(this.gameObject);  // 摧毁子弹
+			
+		}
+    }
+	
+	
+	// Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}

@@ -886,6 +886,7 @@ Transform:
   - {fileID: 5686134208185136534}
   - {fileID: 7398046701410520641}
   - {fileID: 3171187857577462300}
+  - {fileID: 2938200686322106285}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -932,7 +933,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c0f716a9e9ac00c438b95158ba195a58, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8ab524aa043e6ad46855c4421a663a01, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1031,10 +1032,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerActionTrigger: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  speed: 50
+  force: 5
   magicToken: {fileID: 991781928792495190}
-  bullet: {fileID: 7756278169734229908, guid: 84684e23266dbcc4697a5edefc1eedce, type: 3}
-  Sliencer: {fileID: 7398046701410520641}
+  bullet: {fileID: 3107678787102599150, guid: 561c0c7643d92374594ab26d8172d7f8, type: 3}
+  Sliencer: {fileID: 2938200686322106285}
   gunSound: {fileID: 5100060922128084270}
 --- !u!1 &5686134208185362932
 GameObject:
@@ -1145,8 +1146,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controllerActionGrip: {fileID: -6038876744224716453, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   collectableFireTotem: {fileID: 1375857310618455586, guid: df50e33ae762a4b42847ba63b95880de, type: 3}
+  collectWeaponScript: {fileID: 0}
   selectedWeapon: 0
   weaponNumber: 0
+--- !u!1 &9023359634003882810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2938200686322106285}
+  m_Layer: 0
+  m_Name: Sliencer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2938200686322106285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9023359634003882810}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.028, y: 0.153, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5686134208185136530}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1001 &991781928792617442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1319,6 +1351,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 163516, guid: 11a2bf50f579eff44aa4483864409a5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 466112, guid: 11a2bf50f579eff44aa4483864409a5e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1374,6 +1410,14 @@ PrefabInstance:
     - target: {fileID: 466112, guid: 11a2bf50f579eff44aa4483864409a5e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802204, guid: 11a2bf50f579eff44aa4483864409a5e, type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802204, guid: 11a2bf50f579eff44aa4483864409a5e, type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11a2bf50f579eff44aa4483864409a5e, type: 3}

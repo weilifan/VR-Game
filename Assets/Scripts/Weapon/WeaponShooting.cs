@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class WeaponShooting : MonoBehaviour
 {
 	[SerializeField] InputActionReference controllerActionTrigger;
-	public float speed = 50;
+	public float force = 5;
 	public GameObject magicToken;
 	public GameObject bullet;
 	public Transform Sliencer;
@@ -59,8 +59,8 @@ public class WeaponShooting : MonoBehaviour
 	public void Fire()
 	{
 		GameObject spawnBullet = Instantiate(bullet, Sliencer.position, Sliencer.rotation);
-		spawnBullet.GetComponent<Rigidbody>().velocity = speed * Sliencer.forward;
+		spawnBullet.GetComponent<Rigidbody>().AddForce(force * Sliencer.forward);
 		gunSound.Play();
-		//Destroy(spawnBullet, 2);
+		//Destroy(spawnBullet, 3);
 	}
 }
