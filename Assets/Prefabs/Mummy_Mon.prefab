@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9339623, g: 0.22477052, b: 0.10044494, a: 1}
+  m_Color: {r: 0.103773594, g: 0.09658536, b: 0.09535423, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -192,11 +192,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 2215417460924010430}
   m_HandleRect: {fileID: 0}
-  m_Direction: 0
+  m_Direction: 1
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+  m_Color: {r: 0.8584906, g: 0.124724075, b: 0.124724075, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -454,9 +454,11 @@ GameObject:
   - component: {fileID: 5470007109229552792}
   - component: {fileID: 5470007109229552799}
   - component: {fileID: 47803717}
-  - component: {fileID: 7362668807462487302}
   - component: {fileID: 1198010250156974233}
   - component: {fileID: 3449564345005260604}
+  - component: {fileID: 482351738}
+  - component: {fileID: 482351739}
+  - component: {fileID: 482351740}
   m_Layer: 0
   m_Name: Mummy_Mon
   m_TagString: Mummy
@@ -547,22 +549,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7362668807462487302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5470007109229552796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32ff31dcc8361d04baf65af2879198a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthValueDefine: 3
-  enemyHittenSoundDefine: {fileID: 1198010250156974233}
-  enemyDeadDefine: {fileID: 3449564345005260604}
-  sliderDefine: {fileID: 2188645692132226148}
 --- !u!82 &1198010250156974233
 AudioSource:
   m_ObjectHideFlags: 0
@@ -755,6 +741,47 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &482351738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5470007109229552796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec096fbc48f39d443a50d6e66c05d489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &482351739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5470007109229552796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed7bce53303f8d438ca04786e7ce4fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  max_health: 3
+  current_health: 3
+  enemy_health_bar: {fileID: 2188645692132226148}
+  attackedClip: {fileID: 1198010250156974233}
+--- !u!114 &482351740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5470007109229552796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d88e3e70e045ed48b04e189b526e36e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy_max_health: 3
 --- !u!1 &5470007109309210875
 GameObject:
   m_ObjectHideFlags: 0
