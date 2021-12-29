@@ -5,6 +5,7 @@ using UnityEngine;
 public class MummyMove : MonoBehaviour
 {
     private Transform mummy;
+	public Transform player;
     public float speed = 2f;
 	
 	public float changeDirectionTime = 2f;//the time duration to change direction
@@ -32,5 +33,16 @@ public class MummyMove : MonoBehaviour
 		}
 		
 		transform.position += moveDirection * Time.deltaTime * speed;
+    }
+	
+	void OnTriggerEnter(Collider other) {
+        // 如果碰撞的是Boundary则返回
+        if (other.tag == "Player")
+		{
+			PlayerHealth health;
+			health=player.gameObject.GetComponent<PlayerHealth>();
+			health.TakeDamage(1);
+			
+		}
     }
 }
