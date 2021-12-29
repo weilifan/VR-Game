@@ -10,6 +10,9 @@ public class CollectBullet : MonoBehaviour
 	public void Collect()
     {
         bulletNumber++;
+		
+		MainUIManager.instance.UpdateBulletCountText(bulletNumber, 10);
+		
 		DestroyImmediate(bullet);
     }
 	

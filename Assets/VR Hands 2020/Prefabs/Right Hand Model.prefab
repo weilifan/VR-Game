@@ -1032,7 +1032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerActionTrigger: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  force: 5
+  force: 15
   magicToken: {fileID: 991781928792495190}
   bullet: {fileID: 3107678787102599150, guid: 561c0c7643d92374594ab26d8172d7f8, type: 3}
   Sliencer: {fileID: 2938200686322106285}

@@ -29,6 +29,9 @@ public class PlayerHealth : MonoBehaviour
         float counted_damage = Mathf.Max(0, damage);
         current_health -= damage;
 
+		MainUIManager.instance.UpdateHealthBar(current_health, max_health);
+
+
         if(current_health <= 0)
             Die();
     }
