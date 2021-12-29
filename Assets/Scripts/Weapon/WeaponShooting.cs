@@ -7,8 +7,16 @@ public class WeaponShooting : MonoBehaviour
 {
 	[SerializeField] InputActionReference controllerActionTrigger;
 	public float force = 5;
+	
+	[Header("Fire Magic Token")]
 	public GameObject magicToken;
-	public GameObject bullet;
+	public BulletController bullet;
+	
+	[Header("Water Magic Token")]
+	public GameObject waterMagicToken;
+	public BulletController waterBullet;
+	
+	[Header("Sliencer and Sound")]
 	public Transform Sliencer;
 	public AudioSource gunSound;
 	
@@ -19,10 +27,6 @@ public class WeaponShooting : MonoBehaviour
 		
 		controllerActionTrigger.action.canceled += TriggerEnd;
 		
-		
-		
-		//GameObject rootObj = GameObject.Find("Right Hand Model");
-		//magicToken =  rootObj.transform.Find("pfb_FireTotem").gameObject;
 	}	
 	
     void Start()
@@ -36,6 +40,10 @@ public class WeaponShooting : MonoBehaviour
 		{
 			if(getActive(magicToken)){
 				Fire();
+				CollectBullet.ConsumeBullet();
+			}
+			if(getActive(waterMagicToken)){
+				Water();
 				CollectBullet.ConsumeBullet();
 			}
 		}
@@ -58,9 +66,17 @@ public class WeaponShooting : MonoBehaviour
 	
 	public void Fire()
 	{
-		GameObject spawnBullet = Instantiate(bullet, Sliencer.position, Sliencer.rotation);
-		spawnBullet.GetComponent<Rigidbody>().AddForce(force * Sliencer.forward);
+		
+		BulletController spawnBullet = Instantiate(bullet, Sliencer.position, Quaternion.identity);
+		spawnBullet.SetMoveParam(Sliencer.forward, force);
 		gunSound.Play();
-		//Destroy(spawnBullet, 3);
+	}
+	
+	public void Water()
+	{
+		
+		BulletController spawnBullet = Instantiate(waterBullet, Sliencer.position, Quaternion.identity);
+		spawnBullet.SetMoveParam(Sliencer.forward, force);
+		gunSound.Play();
 	}
 }

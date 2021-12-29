@@ -16,12 +16,16 @@ public class WeaponSwitching : MonoBehaviour
 	
     void Start()
     {
-        SelectWeapon();
+        //SelectWeapon();
+		foreach (Transform weapon in transform)
+		{
+			weapon.gameObject.SetActive(false);
+		}
     }
 
     void Update()
     {
-		//int previousSelectedWeapon = selectedWeapon;
+		int previousSelectedWeapon = selectedWeapon;
 		
 		weaponNumber = CollectWeapon.weaponNumber;//collectableFireTotem.GetComponent<CollectWeapon>().weaponNumber;
 		
@@ -72,10 +76,10 @@ public class WeaponSwitching : MonoBehaviour
 		{
 			if(i < weaponNumber)
 			{
-			if(i == selectedWeapon)
-				weapon.gameObject.SetActive(true);
-			else
-				weapon.gameObject.SetActive(false);
+				if(i == selectedWeapon)
+					weapon.gameObject.SetActive(true);
+				else
+					weapon.gameObject.SetActive(false);
 			}
 			else
 			{
