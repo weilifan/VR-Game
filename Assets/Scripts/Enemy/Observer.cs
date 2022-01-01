@@ -38,12 +38,12 @@ public class Observer : MonoBehaviour
             if (Physics.Raycast (ray, out raycastHit))
             {
                 Debug.Log("在射线if里碰到了玩家");
-				//if (raycastHit.collider.transform == player)
-                //{
+				if (raycastHit.collider.transform == player)
+                {
                     PlayerHealth health;
 					health=player.gameObject.GetComponent<PlayerHealth>();
 					health.TakeDamage(1);
-                //}
+                }
             }
         }
     }

@@ -12,10 +12,8 @@ public class PlayerHealth : MonoBehaviour
 	//be attacked audio
 	public AudioSource attackedClip;
 	
-	void Awake()
-    {
-        
-    }
+	[Header("Lost Canvas")]
+	public GameObject lostCanvas;
 
 	public void Initialize(float max_health)
     {
@@ -24,9 +22,8 @@ public class PlayerHealth : MonoBehaviour
 	
 	public void TakeDamage(float damage)
     {
-        attackedClip.Play();//播放音效
-		//the damage received after shield breaks
-        float counted_damage = Mathf.Max(0, damage);
+        attackedClip.Play();//Play the sound effect of the player being hurt
+		
         current_health -= damage;
 
 		MainUIManager.instance.UpdateHealthBar(current_health, max_health);
@@ -38,6 +35,6 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
-        
+        lostCanvas.SetActive(true);
     }
 }

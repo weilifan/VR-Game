@@ -10,9 +10,6 @@ public class CollectBullet : MonoBehaviour
 	public void Collect()
     {
         bulletNumber++;
-		
-		MainUIManager.instance.UpdateBulletCountText(bulletNumber, 10);
-		
 		DestroyImmediate(bullet);
     }
 	
@@ -21,15 +18,8 @@ public class CollectBullet : MonoBehaviour
         bulletNumber--;
     }
 	
-	// Start is called before the first frame update
-    void Start()
+	void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        MainUIManager.instance.UpdateBulletCountText(bulletNumber, 10);
     }
 }

@@ -9,19 +9,11 @@ public class Health : MonoBehaviour
     public float max_health;
     public float current_health;
 	
-	private Die death_action;
-	
 	[SerializeField] Slider enemy_health_bar;
 	
 	[Header("Audio")]
 	//be attacked audio
 	public AudioSource attackedClip;
-
-
-	void Awake()
-    {
-        death_action = GetComponent<Die>();
-    }
 
 
 	void Update()
@@ -36,8 +28,8 @@ public class Health : MonoBehaviour
 	
 	public void TakeDamage(float damage)
     {
-        attackedClip.Play();//播放音效
-		//the damage received after shield breaks
+        attackedClip.Play();//Play sound
+		
         float counted_damage = Mathf.Max(0, damage);
         current_health -= damage;
 
@@ -47,6 +39,6 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
-        death_action.HandleDeath();
+		Destroy(this.gameObject);
     }
 }

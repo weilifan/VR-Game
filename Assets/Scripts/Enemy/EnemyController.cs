@@ -13,40 +13,22 @@ public class EnemyController : MonoBehaviour
     {
 		enemy_health = GetComponent<Health>();
 		SetDefaultValues();
-		
-		
-		
     }
 	
 	void SetDefaultValues()
 	{
 		enemy_health.Initialize(enemy_max_health);
 	}
-
-    /*private	void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.transform.CompareTag("Player"))
-        {
-            Health health;
-            health=other.gameObject.GetComponent<Health>();
-            health.TakeDamage(1);
-        }
-    }*/
 	
 	void OnTriggerEnter(Collider other) {
-        // 如果碰撞的是Boundary则返回
+        // If it collides with Fire, the mummy’s health value is reduced by one
         if (other.tag == "Fire")
 		{
 			Health health;
             health=this.gameObject.GetComponent<Health>();
             health.TakeDamage(1);
 			
-			
-			//  实例化爆炸特效
-			//Instantiate(explosion, transform.position, transform.rotation);
-			//isHealthValueLessThanZero = Health.isHealthValueLessThanZero();
-			
-			Destroy(other.gameObject);  // 摧毁子弹
+			Destroy(other.gameObject);  // Destroy the bullet
 			
 		}
     }

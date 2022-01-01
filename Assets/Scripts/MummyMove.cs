@@ -13,15 +13,14 @@ public class MummyMove : MonoBehaviour
 	private float changeTimer;//the timer of changing direction
 	private Vector3 moveDirection;//the current moving direction
 	
-	// Start is called before the first frame update
     void Start()
     {
         mummy = this.transform;
-		moveDirection = isVertical ? Vector3.up : Vector3.right;//if moving is vertical, then set the direction to up, if moving is horizontal, then set the direction to right
+		moveDirection = isVertical ? Vector3.up : Vector3.right;//if moving is vertical, then set the direction to up, 
+																//if moving is horizontal, then set the direction to right
 		changeTimer = changeDirectionTime;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
 		changeTimer -= Time.deltaTime;
@@ -36,7 +35,7 @@ public class MummyMove : MonoBehaviour
     }
 	
 	void OnTriggerEnter(Collider other) {
-        // 如果碰撞的是Boundary则返回
+        // If the collision is a player, the player’s health value will be reduced by one
         if (other.tag == "Player")
 		{
 			PlayerHealth health;
