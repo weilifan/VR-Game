@@ -9,7 +9,6 @@ public class BulletController : MonoBehaviour
     private float move_force;
 
     public float lifeTime = 10f;
-	public bool isCollided = false;
 	
     void Awake()
     {
@@ -18,17 +17,8 @@ public class BulletController : MonoBehaviour
 
     void FixedUpdate()
     {	
-		if (!isCollided)
-			Move();
+		transform.position += move_force * move_direction * Time.deltaTime; //The movement of the bullet
         Destroy(this.gameObject, lifeTime);
-    }
-	
-	//子弹的移动
-    public void Move()
-    {
-        transform.position += move_force * move_direction * Time.deltaTime; //first way
-
-        //rbody.AddForce(move_direction*move_force);
     }
 
     public void SetMoveParam(Vector3 move_direction, float move_force)

@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [Header("Health and Shield")]
     [SerializeField] private float max_health = 10f;
     private PlayerHealth player_health;
+	public GameObject winCanvas;
 	
 	// Start is called before the first frame update
     void Start()
@@ -16,9 +17,13 @@ public class PlayerController : MonoBehaviour
 		player_health.Initialize(max_health);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void OnTriggerEnter(Collider other) 
+	{
+        // If the collision is a Destination, the win canvas will be set to active
+        if (other.tag == "Destination")
+		{
+			winCanvas.SetActive(true);
+			
+		}
     }
 }

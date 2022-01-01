@@ -6,11 +6,11 @@ using UnityEngine.InputSystem;
 public class WeaponShooting : MonoBehaviour
 {
 	[SerializeField] InputActionReference controllerActionTrigger;
-	public float force = 5;
+	public float force = 7;
 	
 	[Header("Fire Magic Token")]
 	public GameObject magicToken;
-	public BulletController bullet;
+	public BulletController fireBullet;
 	
 	[Header("Water Magic Token")]
 	public GameObject waterMagicToken;
@@ -24,16 +24,9 @@ public class WeaponShooting : MonoBehaviour
 	private void Awake()
 	{
 		controllerActionTrigger.action.performed += TriggerPress;
-		
-		controllerActionTrigger.action.canceled += TriggerEnd;
-		
 	}	
-	
-    void Start()
-    {
-        //magicToken.SetActive(false);
-    }
 
+	//Check which magic token is being used
     private void TriggerPress(InputAction.CallbackContext obj)
 	{
 		if(CollectBullet.bulletNumber > 0)
@@ -49,12 +42,7 @@ public class WeaponShooting : MonoBehaviour
 		}
 	}
 	
-	private void TriggerEnd(InputAction.CallbackContext obj)
-	{
-		
-	}
-	
-	
+	//Check which magic token is being activated in weapon holder
 	public bool getActive(GameObject go)
     {
         if (go)
@@ -66,15 +54,13 @@ public class WeaponShooting : MonoBehaviour
 	
 	public void Fire()
 	{
-		
-		BulletController spawnBullet = Instantiate(bullet, Sliencer.position, Quaternion.identity);
+		BulletController spawnBullet = Instantiate(fireBullet, Sliencer.position, Quaternion.identity);
 		spawnBullet.SetMoveParam(Sliencer.forward, force);
 		gunSound.Play();
 	}
 	
 	public void Water()
 	{
-		
 		BulletController spawnBullet = Instantiate(waterBullet, Sliencer.position, Quaternion.identity);
 		spawnBullet.SetMoveParam(Sliencer.forward, force);
 		gunSound.Play();

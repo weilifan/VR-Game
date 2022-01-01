@@ -1033,7 +1033,7 @@ MonoBehaviour:
   controllerActionTrigger: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   force: 5
   magicToken: {fileID: 991781928792495190}
-  bullet: {fileID: 8658643754376933939, guid: 561c0c7643d92374594ab26d8172d7f8, type: 3}
+  fireBullet: {fileID: 8658643754376933939, guid: 561c0c7643d92374594ab26d8172d7f8, type: 3}
   waterMagicToken: {fileID: 5079216771157788328}
   waterBullet: {fileID: 8658643754376933939, guid: 5805833d02b65cc42adcd6c66c0fc506, type: 3}
   Sliencer: {fileID: 2938200686322106285}
@@ -1146,10 +1146,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerActionGrip: {fileID: -6038876744224716453, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  collectableFireTotem: {fileID: 1375857310618455586, guid: df50e33ae762a4b42847ba63b95880de, type: 3}
-  collectWeaponScript: {fileID: 0}
-  selectedWeapon: 0
-  weaponNumber: 0
 --- !u!1 &9023359634003882810
 GameObject:
   m_ObjectHideFlags: 0

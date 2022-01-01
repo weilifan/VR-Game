@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 1375857310045227976}
   - component: {fileID: 1375857310045227977}
   - component: {fileID: 1375857310045227979}
-  - component: {fileID: 1375857310045228022}
   - component: {fileID: 1375857310045228023}
   m_Layer: 0
   m_Name: CollectableFireTotem
@@ -282,9 +281,9 @@ MonoBehaviour:
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1375857310618455586}
-        m_TargetAssemblyTypeName: MagicTokenAction, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1375857310045228023}
+        m_TargetAssemblyTypeName: CollectWeapon, Assembly-CSharp
+        m_MethodName: CollectToken
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -373,24 +372,6 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
---- !u!114 &1375857310045228022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1375857310618455586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82c894b1d5519044eb1c65356408e2e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 50
-  bullet: {fileID: 7756278169734229908, guid: 84684e23266dbcc4697a5edefc1eedce, type: 3}
-  collectableMagicToken: {fileID: 1375857310618455586}
-  Sliencer: {fileID: 1375857310851665260}
-  gunSound: {fileID: 1375857310045227977}
-  hand: {fileID: 5686134208185362930, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
 --- !u!114 &1375857310045228023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,7 +384,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887f98a93a2a6204c8226625c2dfa0eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponNumber: 0
 --- !u!1 &1375857310618466568
 GameObject:
   m_ObjectHideFlags: 0

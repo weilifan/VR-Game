@@ -14,6 +14,12 @@ public class PlayerHealth : MonoBehaviour
 	
 	[Header("Lost Canvas")]
 	public GameObject lostCanvas;
+	
+	
+	void Start()
+    {
+        Time.timeScale = 1;
+    }
 
 	public void Initialize(float max_health)
     {
@@ -36,5 +42,6 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         lostCanvas.SetActive(true);
+		Time.timeScale = 0;
     }
 }

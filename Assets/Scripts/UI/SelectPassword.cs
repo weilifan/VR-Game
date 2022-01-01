@@ -7,41 +7,40 @@ using System;
 
 public class SelectPassword : MonoBehaviour
 {
-    //public Button[] passwordButtons;
-	public GameObject passwordCanvas;
+	[Header("Prompt text for incorrect password")]
 	public GameObject passwordIncorrect;
 	
-	public static string realPassword = GenerateRandomCode(4);
+	[Header("User entered password text")]
+	public Text userEnteredPasswordText;
 	
+	[Header("Door opening sound")]	
+	public AudioSource doorOpenedClip;
+	
+	
+	public static string realPassword = GenerateRandomCode(4);
 	public static string userEnteredPassword = "";
 	
-	// Start is called before the first frame update
-    void Start()
+	void Update()
     {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+		userEnteredPasswordText.text = "Please enter password: " + userEnteredPassword;
     }
 	
-	//当每个按钮被按下，纪录用户输入的密码
-	public void Select(int levelIndex)//int levelIndex
+	//When each button is pressed, the password entered by the user is recorded
+	public void Select(int passwordIndex)
 	{
-		userEnteredPassword = string.Concat(userEnteredPassword,levelIndex.ToString());
+		userEnteredPassword = string.Concat(userEnteredPassword,passwordIndex.ToString());
 		Debug.Log("当前密码是："+userEnteredPassword);
 		Debug.Log("正确密码是："+realPassword);
 	}
 	
-	//当确认按钮被按下，比较用户输入的密码和正确密码
+	//When the confirm button is pressed, compare the password entered by the user with the correct password
 	public void ComparePassword()
 	{
 		if(realPassword == userEnteredPassword)
 		{
-			Debug.Log("密码正确");
 			PlayDoorAnimation.PlayAnimation();
-			DestroyImmediate(passwordCanvas);
+			doorOpenedClip.Play();//Play sound
+			Destroy(this.gameObject, 1f);
 		}
 		else
 		{

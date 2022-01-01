@@ -5,12 +5,11 @@ using UnityEngine;
 public class CollectBullet : MonoBehaviour
 {
     public static int bulletNumber = 0;
-	public GameObject bullet;
 	
 	public void Collect()
     {
         bulletNumber++;
-		DestroyImmediate(bullet);
+		DestroyImmediate(this.gameObject);
     }
 	
 	public static void ConsumeBullet()

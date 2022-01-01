@@ -7,6 +7,7 @@ TagManager:
   - Fire
   - Mummy
   - Water
+  - Destination
   layers:
   - Default
   - TransparentFX
