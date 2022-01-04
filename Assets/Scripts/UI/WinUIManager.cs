@@ -12,7 +12,10 @@ public class WinUIManager : MonoBehaviour
 	
     public void PlayAgain()
     {
-        SceneManager.LoadScene(0);
+        //SceneManager.LoadScene(0, LoadSceneMode.Additive);
+
+        SceneManager.LoadScene(0,LoadSceneMode.Additive);
+
     }
 	
 	public void Exit()

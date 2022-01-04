@@ -9,7 +9,7 @@ public class CollectBullet : MonoBehaviour
 	public void Collect()
     {
         bulletNumber++;
-		DestroyImmediate(this.gameObject);
+		Destroy(this.gameObject);
     }
 	
 	public static void ConsumeBullet()

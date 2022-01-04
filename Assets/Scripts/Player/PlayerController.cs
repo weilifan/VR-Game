@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //variables needed for health
-    [Header("Health and Shield")]
+    [Header("Health")]
     [SerializeField] private float max_health = 10f;
     private PlayerHealth player_health;
 	public GameObject winCanvas;

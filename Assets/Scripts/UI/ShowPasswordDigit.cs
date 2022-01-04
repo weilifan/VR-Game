@@ -11,12 +11,6 @@ public class ShowPasswordDigit : MonoBehaviour
 	// Start is called before the first frame update
     void Start()
     {
-         passwordDigitText.GetComponent<Text>().text = "The "+digitNumber+" digit of password is "+SelectPassword.realPassword[digitNumber-1];
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+         passwordDigitText.GetComponent<Text>().text = "The digit "+digitNumber+" of password is "+SelectPassword.realPassword[digitNumber-1];
     }
 }

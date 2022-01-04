@@ -13,7 +13,7 @@ public class LostUIManager : MonoBehaviour
 	
     public void PlayAgain()
     {
-        SceneManager.LoadScene(0);
+		SceneManager.LoadScene(0);
     }
 	
 	public void Exit()

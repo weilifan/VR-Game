@@ -12,13 +12,13 @@ public class VRHandController : MonoBehaviour
 	
 	private void Awake()
 	{
+		handAnimator = GetComponent<Animator>();
+		
 		controllerActionGrip.action.performed += GripPress;
 		controllerActionTrigger.action.performed += TriggerPress;
 		
 		controllerActionGrip.action.canceled += GripEnd;
 		controllerActionTrigger.action.canceled += TriggerEnd;
-		
-		handAnimator = GetComponent<Animator>();
 	}	
 	
 	private void GripPress(InputAction.CallbackContext obj)
